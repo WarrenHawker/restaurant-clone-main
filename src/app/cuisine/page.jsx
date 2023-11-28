@@ -1,8 +1,8 @@
-import React from "react";
-import styles from "./cuisine.module.css";
-import Navbar from "../components/navbar/Navbar";
-import Image from "next/image";
-import useSWR from "swr";
+import React from 'react';
+import styles from './cuisine.module.css';
+import Navbar from '../components/navbar/Navbar';
+import Image from 'next/image';
+import useSWR from 'swr';
 const fetcher = async (url) => {
   const res = await fetch(url);
 
@@ -14,19 +14,19 @@ const fetcher = async (url) => {
   return data;
 };
 const getData = async () => {
-  const res = await fetch(`${process.env.BASE}/api/cuisines`);
+  const res = await fetch(`/api/cuisines`);
 
   if (!res.ok) {
-    throw new Error("Failed");
+    throw new Error('Failed');
   }
 
   return res.json();
 };
 
-const Cuisine = async() => {
+const Cuisine = async () => {
   const data = await getData();
   //  const {data , isLoading} = useSWR('http://localhost:3000/api/cuisines', fetcher)
-  console.log('data:',data);
+  console.log('data:', data);
   return (
     <div className={styles.container}>
       <Navbar />
@@ -35,7 +35,7 @@ const Cuisine = async() => {
         <hr className={styles.responsiveDivider} />
         <hr
           className={styles.responsiveDivider}
-          style={{ marginBottom: "1em" }}
+          style={{ marginBottom: '1em' }}
         />
 
         <div className={styles.aboutCuisine}>
@@ -43,7 +43,7 @@ const Cuisine = async() => {
             <hr className={styles.bigDivider} />
             <hr
               className={styles.bigDivider}
-              style={{ marginBottom: "30px" }}
+              style={{ marginBottom: '30px' }}
             />
 
             <p>
@@ -57,7 +57,7 @@ const Cuisine = async() => {
               We have modernized many Greek dishes while staying true to the
               signature tastes of the Greek table, respecting the pure flavors
               of sweet baby lamb, tangy homemade yogurt, and the woodsy scent of
-              wild oregano.{" "}
+              wild oregano.{' '}
             </p>
 
             <p>
@@ -85,36 +85,33 @@ const Cuisine = async() => {
               served straight from the mesquite grill with hints of garlic,
               oregano and lemon juice. While traditional soutzoukakia, or lamb
               meatballs, are enlivened with a hint of cumin and tangy Greek
-              yogurt.{" "}
+              yogurt.{' '}
             </p>
           </div>
           <div className={styles.images}>
             <div className={styles.imgContainer}>
-              <Image src={"/lamb.jpg"} fill className={styles.img} />
+              <Image src={'/lamb.jpg'} fill className={styles.img} />
             </div>
             <div className={styles.imgContainer}>
-              <Image src={"/olives.jpg"} fill className={styles.img} />
+              <Image src={'/olives.jpg'} fill className={styles.img} />
             </div>
           </div>
         </div>
         <div className={styles.cuisines}>
-       
-       {data.map(item =>(
-           <div className={styles.eachCuisine} key={item.id}>
-           <div className={styles.eachCuisineImageContainer}>
-             <Image
-               src={item.img}
-               alt="oliveOil"
-               fill
-               className={styles.img}
-             />
-           </div>
-           <h3 style={{ margin: "1.25em 0" }}>{item.title}</h3>
-           <p style={{ padding: "0 .6em 0 1.25em " }}>
-            {item.desc}
-           </p>
-         </div>
-       ))}
+          {data.map((item) => (
+            <div className={styles.eachCuisine} key={item.id}>
+              <div className={styles.eachCuisineImageContainer}>
+                <Image
+                  src={item.img}
+                  alt="oliveOil"
+                  fill
+                  className={styles.img}
+                />
+              </div>
+              <h3 style={{ margin: '1.25em 0' }}>{item.title}</h3>
+              <p style={{ padding: '0 .6em 0 1.25em ' }}>{item.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
