@@ -1,0 +1,40 @@
+// This is your Prisma schema file
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Cuisine {
+  id    String @id @default(cuid()) @map("_id")
+  img   String
+  title String
+  desc  String
+}
+
+model Table {
+  id    String @id @default(cuid()) @map("_id")
+  img   String
+  title String
+  desc  String
+}
+
+model Press {
+  id       String @id @default(cuid()) @map("_id")
+  img      String
+  title    String
+  subtitle String
+  desc     String
+  link     String
+}
+
+model State {
+  id   String @id @default(cuid()) @map("_id")
+  name String
+}
+

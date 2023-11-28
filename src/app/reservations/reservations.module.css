@@ -1,0 +1,89 @@
+.container {
+  padding: 0 1.8em;
+}
+.mainContainer {
+  margin: 0 auto;
+  max-width: 940px;
+}
+.reservationssContainer{
+  display: flex;
+  gap: 2em;
+  margin-bottom: 5em;
+}
+.imgContainer {
+  position: relative;
+  width: 426px;
+  height: 640px;
+
+}
+.img {
+  position: absolute;
+  object-fit: cover;
+}
+.textContainer p {
+  margin: 1em 0;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.times p{
+  margin-left: 2em;
+}
+.mapContainer{
+  position: relative;
+  padding-bottom: 56.25%; /* Maintain 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+.mapContainer iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.directionsContainer{
+  text-align: center;
+  margin-top: 4em;
+}
+.directionsContainer h4{
+  font-size: 34px;
+}
+.directionsContainer a{
+  text-decoration: none;
+  color: #844e02;
+}
+
+.carIconContainer{
+  padding: 5px 8px;
+  border-radius: 50%;
+  color: white;
+  background-color: #333333;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+.eachDirectAddressList{
+  margin-top: 2em;
+}
+.directAddress{
+  margin-bottom: 7em;
+}
+.responsiveDivider{
+  display: none;
+}
+@media screen and (max-width: 760px) {
+  .mainContainer{
+    padding: 0 1em;
+  }
+  .responsiveDivider{
+    display: block;
+  }
+  .bigDivider{
+    display: none;
+  }
+  .reservationssContainer{
+    flex-direction: column;
+  }
+  
+ 
+}

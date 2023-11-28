@@ -1,0 +1,70 @@
+.container {
+  padding: 0 1.8em;
+}
+.mainContainer {
+  margin: 0 auto;
+  max-width: 940px;
+}
+.imgContainer {
+  position: relative;
+  width: 420px;
+  height: 280px;
+  flex: 1;
+}
+.img {
+  position: absolute;
+  object-fit: cover;
+}
+.eachTable {
+  margin: 4em 0;
+}
+.eachTableContents {
+  display: flex;
+  gap: 2em;
+  margin-bottom: 5em;
+  gap: 1.5em;
+}
+.textContainer p {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.textContainer {
+  flex: 1;
+}
+.diningInformation {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+}
+.diningInformation a {
+  text-decoration: none;
+  color: #844e02;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+.responsiveDivider {
+  display: none;
+}
+@media screen and (max-width: 760px) {
+  .mainContainer {
+    padding: 0 1em;
+  }
+  .responsiveDivider {
+    display: block;
+  }
+  .bigDivider {
+    display: none;
+  }
+  .eachTableContents {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .imgContainer {
+    flex: unset;
+  }
+  .textContainer {
+    flex: unset;
+    text-align: center;
+  }
+}

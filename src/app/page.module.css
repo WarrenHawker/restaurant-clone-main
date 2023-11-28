@@ -1,0 +1,11 @@
+.container {
+}
+.imgContainer {
+  width: 100%;
+  height: 602px;
+  position: relative;
+  overflow: hidden;
+  background-image: url(../../public/kitchen.jpg);
+  background-position: center;
+  margin-bottom: 1.8em;
+}

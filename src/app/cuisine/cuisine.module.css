@@ -1,0 +1,88 @@
+.container {
+  padding: 0 1.8em;
+}
+.mainContainer {
+  margin: 0 auto;
+  max-width: 940px;
+}
+.aboutCuisine {
+  display: flex;
+  gap: 2em;
+  margin-bottom: 5em;
+}
+
+.imgContainer {
+  position: relative;
+  width: 451px;
+  height: 451px;
+  margin-bottom: 1em;
+  box-shadow: 1.1px 1.9px 1.5px -9px rgba(0, 0, 0, 0.08),
+    9px 15px 12px -9px rgba(0, 0, 0, 0.16);
+}
+
+.img {
+  position: absolute;
+  object-fit: cover;
+}
+.images {
+  display: flex;
+  flex-direction: column;
+}
+
+.textContainer p {
+  margin: 1em 0;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.eachCuisine {
+  display: flex;
+  flex-direction: column;
+  background-color: #6d4412;
+  text-align: center;
+  width: fit-content;
+  color: white;
+  padding-bottom: 3em;
+}
+.cuisines {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-auto-flow: dense;
+  column-gap: 2em;
+  row-gap: 4em;
+}
+.eachCuisineImageContainer{
+  position: relative;
+  width: 100%;
+  height: 451px;
+
+  box-shadow: 1.1px 1.9px 1.5px -9px rgba(0, 0, 0, 0.08),
+
+    9px 15px 12px -9px rgba(0, 0, 0, 0.16);
+
+}
+.responsiveDivider{
+  display: none;
+}
+@media screen and (max-width: 760px) {
+  .mainContainer{
+    padding: 0 1em;
+  }
+  .responsiveDivider{
+    display: block;
+  }
+  .bigDivider{
+    display: none;
+  }
+  .aboutCuisine{
+    flex-direction: column;
+  }
+  .imgContainer{
+    width: 100%;
+    height: 700px;
+   
+  }
+ .cuisines{
+ grid-template-columns: repeat(1, 1fr);
+ }
+}
