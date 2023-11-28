@@ -14,7 +14,7 @@ const fetcher = async (url) => {
   return data;
 };
 const getData = async () => {
-  const res = await fetch(`/api/cuisines`);
+  const res = await fetch(`${process.env.BASE}/api/cuisines`);
 
   if (!res.ok) {
     throw new Error('Failed');
